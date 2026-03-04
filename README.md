@@ -6,10 +6,14 @@ MCP server that gives agents browser control via Chrome DevTools Protocol.
 
 ```bash
 # macOS
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
+  --remote-debugging-port=9222 \
+  --user-data-dir=/tmp/chrome-debug
 
 # Linux
-google-chrome --remote-debugging-port=9222
+google-chrome \
+  --remote-debugging-port=9222 \
+  --user-data-dir=/tmp/chrome-debug
 ```
 
 Then connect from the MCP server using `browse_connect` with `debug_url` set to `http://localhost:9222`.
